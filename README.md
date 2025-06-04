@@ -51,23 +51,9 @@ This version was created to:
 
 ## 🏗️ Enhanced Architecture
 
-┌──────────────────────────────┐     ┌─────────────────┐
-│          FastAPI             │     │    CrewAI       │
-│ ┌────────────────┐           │  1  │  (GeminiLLM)    │
-│ │WhatsApp Webhook│           │────▶│                │
-│ └────────────────┘           │     │                 │
-│                              │     └─────────────────┘
-│      Main Server             │              │ 2
-│       (Ngrok)                │              │
-└──────────────────────────────┘              ▼
-         │                            ┌─────────────────┐
-         │                            │ Google Calendar │
-         │ 3                          │     Tool        │
-         │                            └─────────────────┘
-         │                                    │
-         └────────────────────────────────────┘
-                                 
-Flow:
+![Architecture Flow](flow.png)
+
+**Flow:**
 1. FastAPI forwards webhook message to CrewAI with GeminiLLM
 2. CrewAI processes and sends a json to Calendar Tool
 3. FastAPI sends success response back to user via WhatsApp API
@@ -215,7 +201,7 @@ This repository serves as:
 
 MIT License - Feel free to use this architectural pattern in your own projects.
 
-## 🙏 Acknowledgments
+## �� Acknowledgments
 
 - **Original Working Version**: This enhanced version is based on a functional calendar assistant
 - **Architecture Focus**: Prioritizes clean code and structure over immediate functionality
