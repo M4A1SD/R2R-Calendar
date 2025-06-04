@@ -1,0 +1,41 @@
+[project]
+name = "assistant_team"
+version = "0.4.0"
+description = "Advanced AI Calendar Assistant powered by CrewAI - Natural language calendar event management with intelligent scheduling capabilities"
+authors = [{ name = "arthur" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.100.1,<1.0.0",
+    "my_calendar_module",
+    "pydantic>=2.0.0",
+    "python-dotenv",
+]
+readme = "README.md"
+license = {text = "MIT"}
+keywords = ["ai", "calendar", "assistant", "crewai", "scheduling", "nlp"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Scheduling",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "r2r.site"
+
+
+[project.scripts]
+kickoff = "assistant_team.main:kickoff"
+plot = "assistant_team.main:plot"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "flow"

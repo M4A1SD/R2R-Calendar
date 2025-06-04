@@ -1,0 +1,21 @@
+CrewAI/
+├── 📄 README.md              # Professional documentation with features & examples
+├── 📄 LICENSE                # MIT License for open source compliance
+├── 📄 pyproject.toml         # Modern Python packaging configuration
+├── 📄 requirements.txt       # Easy dependency management
+├── 📄 .gitignore            # Comprehensive ignore patterns
+├── 📄 install.py            # Simple installation script
+├── 📄 example.py            # Usage examples and demonstrations
+├── 📄 CHANGELOG.md          # Professional change tracking
+├── 📁 src/assistant_team/    # Main package (fixed naming)
+│   ├── 📄 __init__.py       # Package exports and metadata
+│   ├── 📄 main.py           # Main flow with type hints & docs
+│   ├── 📄 utils.py          # Utility functions with robust error handling
+│   ├── 📁 crews/            # CrewAI implementations
+│   │   └── 📁 calendar_crew/ # Calendar-specific crew
+│   │       ├── 📄 calendar_crew.py  # Improved crew implementation
+│   │       └── 📁 config/            # YAML configurations
+│   └── 📁 tools/            # Custom tools (ready for expansion)
+└── 📁 tests/                # Test suite
+    ├── 📄 __init__.py
+    └── 📄 test_utils.py     # Basic test coverage

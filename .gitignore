@@ -1,0 +1,148 @@
+# ============================================================================
+# R2R Calendar - Git Ignore Configuration
+# ============================================================================
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.production
+.env.development
+*.env
+config.json
+secrets.json
+credentials.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.virtualenv/
+.conda/
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+*.log.*
+log-*.txt
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+htmlcov/
+.tox/
+.nox/
+
+# Documentation
+docs/_build/
+.readthedocs.yml
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*.ipynb
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Package Managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Development Tools
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.flake8
+.black
+.isort.cfg
+
+# Cloud & Deployment
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# AI/ML Models
+*.pkl
+*.pickle
+*.model
+*.h5
+*.pb
+
+# Local Development
+ngrok.log
+*.local
+local_*
+
+# API Keys & Tokens (patterns)
+*api_key*
+*token*
+*secret*
+*password*
+*credentials*
+
+# Project Specific
+user_data/
+calendar_cache/
+message_logs/
+debug_output/ 

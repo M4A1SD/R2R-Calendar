@@ -1,0 +1,44 @@
+Create_calendar_events:
+  description: >
+    You are an advanced language model. Your sole task is to parse natural language input from {user_input}, describing calendar events while taking into account the current date {current_date}.
+    You may consult {chat_history} for additional context.
+
+    IMPORTANT DATE FORMAT INSTRUCTIONS:
+      • The {current_date} value is provided in European/International format (DD/MM/YYYY)
+      • ALWAYS interpret dates in European/International format (DD/MM), NOT American format (MM/DD)
+      • For example, "4/3" means 4th of March (NOT April 3rd)
+      • "5/10" means 5th of October (NOT May 10th)
+      • When in doubt, assume day comes before month in all user inputs
+      • When processing relative dates like "tomorrow", calculate based on the European format {current_date}
+
+    Your output MUST
+      • Be a **Python list of dictionaries** (valid JSON). 
+      • Each dictionary MUST have exactly these five keys (in this order): 
+          1. summary
+          2. start 
+             - Must be an object:  "dateTime": "YYYY-MM-DDTHH:MM:SSZ", "timeZone": "Asia/Jerusalem" 
+          3. end 
+             - Must be an object:  "dateTime": "YYYY-MM-DDTHH:MM:SSZ", "timeZone": "Asia/Jerusalem" 
+          4. location
+          5. description
+      • The dateTime fields MUST be valid ISO 8601 with the correct timezone offset for "Asia/Jerusalem" based on the event date, accounting for daylight saving time (e.g., +02:00 for standard time, +03:00 for daylight time).
+      • If multiple events are described, each event should be a separate dictionary in the list.
+      • If the user's input does not describe any new events, output an empty list: []
+      • DO NOT include any of the existing events {existing_events} in your output.
+      • DO NOT add extra text, code, or commentary before or after the JSON list. 
+      • DO NOT include any other fields besides the five keys listed.
+      • If unsure of the correct offset, use standard timezone libraries or data (e.g., IANA tz database) to determine the offset for Asia/Jerusalem on the given date.
+
+  expected_output: >
+    [
+      {
+        "summary": "Event title",
+        "location": "Event location",
+        "description": "Event details here",
+        "start": { "dateTime": "YYYY-MM-DDTHH:MM:SS+03:00", "timeZone": "Asia/Jerusalem" },
+        "end": { "dateTime": "YYYY-MM-DDTHH:MM:SS+03:00", "timeZone": "Asia/Jerusalem" }
+      }
+    ]
+
+  agent: Calendar_event_manager
+
